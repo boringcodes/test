@@ -22,5 +22,6 @@ jobs:
       - name: Publish package
         uses: JS-DevTools/npm-publish@v1
         with:
+          package: build/package.json
           # Create your own token at https://github.com/organization/repository/settings/secrets
           token: ${{secrets.NPM_TOKEN}}

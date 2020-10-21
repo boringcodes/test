@@ -20,10 +20,7 @@ jobs:
       - name: Copy files
         run: cp package.json build/package.json
       - name: Publish package
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          package: build/package.json
-          access: public
+        run: yarn publish build --registry https://registry.npmjs.org --access public
+        env:
           # Create your own token at https://github.com/organization/repository/settings/secrets
-          token: ${{secrets.NPM_TOKEN}}
-          check-version: false
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

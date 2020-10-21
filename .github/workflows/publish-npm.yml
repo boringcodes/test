@@ -20,7 +20,7 @@ jobs:
       - name: Copy files
         run: cp package.json build/package.json
       - name: Publish package
-        run: yarn publish build --access public
-        env:
+        uses: JS-DevTools/npm-publish@v1
+        with:
           # Create your own token at https://github.com/organization/repository/settings/secrets
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          token: ${{secrets.NPM_TOKEN}}

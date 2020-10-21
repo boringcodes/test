@@ -1,0 +1,22 @@
+name: build-source
+
+on: [push]
+
+jobs:
+  build-source:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12]
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v2
+      - name: Setup Node.js ${{matrix.node-version}}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{matrix.node-version}}
+          registry-url: https://registry.npmjs.org
+      - name: Install dependencies
+        run: yarn
+      - name: Build source
+        run: yarn build

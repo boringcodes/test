@@ -23,5 +23,7 @@ jobs:
         uses: JS-DevTools/npm-publish@v1
         with:
           package: build/package.json
+          access: public
           # Create your own token at https://github.com/organization/repository/settings/secrets
           token: ${{secrets.NPM_TOKEN}}
+          check-version: false

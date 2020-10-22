@@ -22,4 +22,6 @@ jobs:
           token: ${{secrets.NPM_TOKEN}}
           registry: https://registry.npmjs.org
           package: ./build/package.json
+          tag: ${{github.ref}}
           access: public
+          check-version: false

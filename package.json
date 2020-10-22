@@ -7,9 +7,8 @@
   "license": "MIT",
   "author": "phatpham9 <phatpham9@gmail.com>",
   "repository": "https://github.com/organization-name/test.git",
-  "engines": {
-    "node": "12"
-  },
+  "main": "index.js",
+  "typings": "index.d.ts",
   "scripts": {
     "dev": "backpack dev",
     "prebuild": "yarn clean",

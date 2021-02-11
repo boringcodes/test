@@ -5,11 +5,16 @@ on: [push]
 jobs:
   lint-source:
     runs-on: ubuntu-latest
-    container:
-      image: node:12-alpine
+    strategy:
+      matrix:
+        node-version: [10, 12, 14, 15]
     steps:
       - name: Checkout source
         uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{matrix.node-version}}
       - name: Install dependencies
         run: yarn
       - name: Check code style

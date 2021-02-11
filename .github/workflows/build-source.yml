@@ -9,7 +9,7 @@ jobs:
         node-version: [10, 12, 14, 15]
     runs-on: ubuntu-latest
     container: boringcodes/dev-runner:node-${{matrix.node-version}}-alpine
-    name: Node v${{matrix.node-version}}
+    name: With Node.js ${{matrix.node-version}}
     steps:
       - name: Checkout source
         uses: actions/checkout@v2

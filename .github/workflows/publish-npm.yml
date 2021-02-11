@@ -16,6 +16,8 @@ jobs:
         run: yarn
       - name: Build source
         run: yarn build
+      - name: Copy package.json
+        run: cp package.json build/package.json
       - name: Publish package
         run: yarn publish build --access public
         env:

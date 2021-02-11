@@ -12,6 +12,10 @@ jobs:
     steps:
       - name: Checkout source
         uses: actions/checkout@v2
+      - name: Setup .npmrc
+        uses: actions/setup-node@v2
+        with:
+          registry-url: 'https://registry.npmjs.org'
       - name: Install dependencies
         run: yarn
       - name: Build source

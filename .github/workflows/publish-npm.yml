@@ -7,8 +7,8 @@ jobs:
     env:
       NODE_VERSION: 15
     runs-on: ubuntu-latest
-    container: boringcodes/dev-runner:node-${{env.NODE_VERSION}}-alpine
-    name: With node.js v${{env.NODE_VERSION}}
+    container: boringcodes/dev-runner:node-$NODE_VERSION-alpine
+    name: With node.js v$NODE_VERSION
     steps:
       - name: Checkout source
         uses: actions/checkout@v2
